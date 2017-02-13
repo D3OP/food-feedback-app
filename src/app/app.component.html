@@ -1,24 +1,17 @@
-<div class="container">
 
 
-  <form #form="ngForm" (submit)="submitForm(form)" novalidate>
-    <div class="form-group">
-      <label>Dish Name:  </label>
-      <input type="text" class="form-control" name="menuItemName" placeholder="Dish (pizza, sandwich, dessert) name here" required>
-    </div>
+    <h1 class="w3-container w3-green">Food Feedback App</h1>
+      <form #form="ngForm" (submit)="submitForm(form)" class="w3-container w3-card-4 w3-margin" novalidate>
+          <label class="w3-label ">What are you eating?</label>
+          <input type="text" class="form-control w3-input" name="menuItemName" placeholder="Pizza, sandwich, ice cream cone..." required>
 
-    <div class="form-group">
-      <label>Restaurant Name:  </label>
-      <input type="text" class="form-control" name="restaurantName" placeholder="Where are you eating" required>
-    </div>
+          <label class="w3-label">Where are you eating?</label>
+          <input type="text" class="form-control w3-input" name="restaurantName" placeholder="Bob's Burgers, Veggie Heaven, Sally's Salads..." required>
 
-    <div>
-      <p>Describe what you're eating:  </p>
-      <textarea cols=40 rows=5 name="description" placeholder="What is it like?"></textarea>
-    </div>
+          <label class="w3-label">Is it really good or not so much?</label>
+          <input type="text" class="form-control w3-input" name="description" placeholder="Best sandwich I've ever had, except for the onions..." required>
 
-    <div>
-      <button type="submit">Save</button>
-    </div>
-  </form>
-</div>
+          <button class="w3-btn w3-margin" type="submit">Save</button>
+      </form>
+    <h5 class="w3-container w3-green">D3OP</h5>
+
