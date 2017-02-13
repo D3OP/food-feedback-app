@@ -1,0 +1,24 @@
+<div class="container">
+
+
+  <form #form="ngForm" (submit)="submitForm(form)" novalidate>
+    <div class="form-group">
+      <label>Dish Name:  </label>
+      <input type="text" class="form-control" name="menuItemName" placeholder="Dish (pizza, sandwich, dessert) name here" required>
+    </div>
+
+    <div class="form-group">
+      <label>Restaurant Name:  </label>
+      <input type="text" class="form-control" name="restaurantName" placeholder="Where are you eating" required>
+    </div>
+
+    <div>
+      <p>Describe what you're eating:  </p>
+      <textarea cols=40 rows=5 name="description" placeholder="What is it like?"></textarea>
+    </div>
+
+    <div>
+      <button type="submit">Save</button>
+    </div>
+  </form>
+</div>
