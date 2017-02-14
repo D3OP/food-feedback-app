@@ -5,12 +5,11 @@ import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './app.component.html'
 })
 
 export class AppComponent {
-  menuItem = new MenuItem("1", "RestaurantName", "Sandwich", "Real good");
+  menuItem = new MenuItem();
 
   constructor(private menuItemService:  MenuItemService) {
 

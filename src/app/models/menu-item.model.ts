@@ -1,13 +1,12 @@
 export class MenuItem {
 
+    public id: number;
+    public name: string;
+    public restaurantName: string;
+    public description: string;
 
-  constructor(
-      public id: string,
-      public restaurantName: string,
-      public name: string,
-      public description: string
-  ) {
+    constructor() {
 
-  }
+    }
 
 }
