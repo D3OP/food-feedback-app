@@ -1,0 +1,18 @@
+<h1 class="w3-container w3-green">Food for Thought</h1>
+<form #form="ngForm" (submit)="submitForm(form)"
+      class="w3-container w3-card-4 w3-margin" novalidate>
+    <label class="w3-label ">What are you eating?</label>
+    <input type="text" class="form-control w3-input" name="menuItemName" [(ngModel)]="menuItem.name"
+           placeholder="Pizza, sandwich, ice cream cone..." required>
+
+    <label class="w3-label">Where are you eating?</label>
+    <input type="text" class="form-control w3-input" name="restaurantName" [(ngModel)]="menuItem.restaurantName"
+           placeholder="Bob's Burgers, Veggie Heaven, Sally's Salads..." required>
+
+    <label class="w3-label">Is it really good or not so much?</label>
+    <input type="text" class="form-control w3-input" name="description" [(ngModel)]="menuItem.description"
+           placeholder="Best sandwich I've ever had, except for the onions..." required>
+
+    <button class="w3-btn w3-margin" type="submit">Save</button>
+</form>
+<h5 class="w3-container w3-green w3-right-align">D3OP</h5>

@@ -1,0 +1,1 @@
+export * from './view-menu-item.component';
