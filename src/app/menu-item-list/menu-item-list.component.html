@@ -1,4 +1,21 @@
 <h1 class="w3-container w3-green">Food for Thought</h1>
+
+<table class="w3-table-all">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Restaurant</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let menuItem of menuItemList">
+            <td>{{ menuItem.name }}</td>
+            <td>{{ menuItem.description }}</td>
+            <td>{{ menuItem.restaurantName }}</td>
+        </tr>
+    </tbody>
+</table>
 <div>
     <p class="w3c-align-center"><a [routerLink]="['/create']">Create new </a></p>
 </div>

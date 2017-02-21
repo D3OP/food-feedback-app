@@ -22,6 +22,6 @@ export class CreateMenuItemComponent {
                 data => console.log('Success. Received response:  ', data),
                 err => console.log('error: ', err)
             )
-        this.router.navigate(['/view']);
+        this.router.navigate(['/view-list']);
     }
 }

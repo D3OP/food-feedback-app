@@ -23,16 +23,37 @@ export class MenuItemService {
         return Observable.throw(error.statusText);
     }
 
-    postMenuItem(menuItem: MenuItem): Observable<any> {
+    postMenuItem(menuItem: MenuItem): Observable<MenuItem> {
         let body = JSON.stringify(menuItem);
         let headers = new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({headers: headers});
 
 
-        return this.http.post('http://localhost:8080/menuitem', body, options)
+        return this.http.post('http://localhost:8080/menuitems', body, options)
             .map(this.extractData)
             .catch(this.handleError)
     }
+
+    readMenuItems(): Observable<MenuItem[]> {
+        let headers = new Headers({'Content-Type': 'application/json'});
+        let options = new RequestOptions({headers: headers});
+
+        return this.http.get('http://localhost:8080/menuitems', options)
+            .map((response: Response) => <MenuItem[]> response.json())
+            .catch(this.handleError)
+    }
+
+    readMenuItem(id: string): Observable<MenuItem> {
+        let headers = new Headers({'Content-Type': 'application/json'});
+        let options = new RequestOptions({headers: headers});
+
+        return this.http.get('http://localhost:8080/menuitems/' + id, options)
+            .map(this.extractData)
+            .catch(this.handleError)
+    }
+
+
+
 
 
 }
