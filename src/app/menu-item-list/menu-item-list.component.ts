@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { MenuItem } from '../models/menu-item.model';
 import { MenuItemService } from '../services/menu-item.service';
 
@@ -7,11 +6,15 @@ import { MenuItemService } from '../services/menu-item.service';
     templateUrl: './menu-item-list.component.html'
 })
 
-export class MenuItemListComponent {
+export class MenuItemListComponent implements OnInit {
 
     menuItemList : MenuItem[];
 
-    constructor(private router: Router, private menuItemService: MenuItemService) {
+    constructor(private menuItemService: MenuItemService) {
+
+    }
+
+    ngOnInit() {
         this.readMenuItems()
     }
 

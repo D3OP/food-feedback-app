@@ -19,7 +19,7 @@ export class MenuItemService {
     }
 
     private handleError(error: any) {
-        console.error('post error: ', error);
+        console.error('error: ', error);
         return Observable.throw(error.statusText);
     }
 
@@ -50,10 +50,7 @@ export class MenuItemService {
         return this.http.get('http://localhost:8080/menuitems/' + id, options)
             .map(this.extractData)
             .catch(this.handleError)
+
     }
-
-
-
-
 
 }

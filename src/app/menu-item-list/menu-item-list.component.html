@@ -10,7 +10,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let menuItem of menuItemList">
-            <td>{{ menuItem.name }}</td>
+            <td><a [routerLink]="['/details', menuItem.id]">{{ menuItem.name }}</a></td>
             <td>{{ menuItem.description }}</td>
             <td>{{ menuItem.restaurantName }}</td>
         </tr>
