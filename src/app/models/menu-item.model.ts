@@ -5,8 +5,4 @@ export class MenuItem {
     public restaurantName: string;
     public description: string;
 
-    constructor() {
-
-    }
-
 }
