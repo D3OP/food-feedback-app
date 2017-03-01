@@ -1,3 +1,5 @@
+import 'zone.js';
+import 'reflect-metadata';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { MenuItem } from '../models/menu-item.model';
