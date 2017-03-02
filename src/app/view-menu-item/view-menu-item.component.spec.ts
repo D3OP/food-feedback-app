@@ -2,7 +2,6 @@ import 'zone.js';
 import 'reflect-metadata';
 import 'mocha';
 import { expect } from 'chai';
-import * as sinon from 'sinon';
 import {ViewMenuItemComponent} from "./view-menu-item.component";
 import {MenuItemService} from "../services/menu-item.service";
 import {ActivatedRoute} from "@angular/router";
@@ -32,13 +31,13 @@ describe('In the file menu-item-list.component.ts', () => {
         });
 
         describe('readMenuItem', () => {
-            // it('will read a menu item', () => {
-            //     let stub = sinon.stub(mockMenuItemService, "readMenuItem");
-            //
-            //
-            //
-            //     expect(false).to.equal(true);
-            // })
+            it('will read a menu item', () => {
+
+
+
+
+                expect(false).to.equal(true);
+            })
         });
 
     });

@@ -1,7 +1,6 @@
 import 'zone.js';
 import 'reflect-metadata';
 import 'mocha';
-import * as sinon from 'sinon';
 import { expect } from 'chai';
 import { MenuItemService } from "./menu-item.service";
 import { Http } from "@angular/http";
@@ -17,14 +16,12 @@ describe('In the file menu-item.service.ts', () => {
         let http: Http;
 
         beforeEach(() => {
-            server = sinon.fakeServer.create();
-            server.autoRespond = true;
             menuItemService = new MenuItemService(http);
 
         });
 
         afterEach(() => {
-            server.restore();
+
         });
 
         describe('constructor', () => {
