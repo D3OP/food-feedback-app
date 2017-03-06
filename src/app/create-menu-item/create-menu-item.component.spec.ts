@@ -20,14 +20,14 @@ describe('In the file create-menu-item.component.ts', () => {
             createMenuItemComponent = new CreateMenuItemComponent(router, menuItemService);
         })
 
-        describe('submitForm', () => {
-            it('will submit a form'), () => {
-                let form: NgForm;
-                createMenuItemComponent.submitForm(form);
-                expect(true).to.equal(false);
-
-            }
-        })
+        // describe('submitForm', () => {
+        //     it('will submit a form'), () => {
+        //         let form: NgForm;
+        //         createMenuItemComponent.submitForm(form);
+        //         expect(true).to.equal(false);
+        //
+        //     }
+        // })
 
     });
 });
