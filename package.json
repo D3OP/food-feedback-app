@@ -71,6 +71,7 @@
     "style-loader": "^0.13.2",
     "ts-node": "^1.2.1",
     "tslint": "^4.0.2",
+    "typemoq": "^1.2.1",
     "typescript": "~2.0.3",
     "typings": "^2.1.0",
     "webpack": "^2.2.1"

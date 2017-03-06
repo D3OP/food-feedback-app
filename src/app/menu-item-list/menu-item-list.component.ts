@@ -9,6 +9,7 @@ import { MenuItemService } from '../services/menu-item.service';
 export class MenuItemListComponent implements OnInit {
 
     menuItemList : MenuItem[];
+    errorMessage : string;
 
     constructor(private menuItemService: MenuItemService) {
 
@@ -22,7 +23,7 @@ export class MenuItemListComponent implements OnInit {
        this.menuItemService.readMenuItems()
             .subscribe(
                 menuItems => this.menuItemList = menuItems,
-                err => console.log('error: ', err)
+                error =>  this.errorMessage = <any>error
             )
     }
 

@@ -13,6 +13,7 @@ import { MenuItemService } from '../services/menu-item.service';
 export class ViewMenuItemComponent implements OnInit {
     menuItem = new MenuItem();
     id : string;
+    errorMessage: string;
 
     constructor(private activatedRoute: ActivatedRoute, private menuItemService: MenuItemService) {
 
@@ -26,12 +27,10 @@ export class ViewMenuItemComponent implements OnInit {
     }
 
     readMenuItem(id: string) {
-        console.log(id)
         this.menuItemService.readMenuItem(id)
             .subscribe(
                 menuItem => this.menuItem = menuItem,
-                err => console.log('error: ', err)
+                error =>  this.errorMessage = <any>error
             )
-        console.log(this.menuItem)
     }
 }

@@ -20,14 +20,6 @@ describe('In the file create-menu-item.component.ts', () => {
             createMenuItemComponent = new CreateMenuItemComponent(router, menuItemService);
         })
 
-
-        describe('constructor', () => {
-            it('will instantiate the object successfully', () => {
-                expect(createMenuItemComponent).to.not.equal(null);
-            })
-
-        });
-
         // describe('submitForm', () => {
         //     it('will submit a form'), () => {
         //         let form: NgForm;
