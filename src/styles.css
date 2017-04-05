@@ -1,0 +1,21 @@
+html {
+    height:100%;
+    width:100%;
+}
+
+body {
+    background-image: url("/src/app/resources/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+img {
+    width:100%;
+    background-color: #212652;
+}
+
+label {
+    display: block;
+    padding-top: 10px;
+    padding-left: 10px;
+}
