@@ -12,6 +12,8 @@ export class MenuItemService {
 
     }
 
+    host : string = 'http://localhost:8080';
+
     private extractData(response: Response) {
         let body = response.json();
         return body;
@@ -22,8 +24,7 @@ export class MenuItemService {
         let headers = new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({headers: headers});
 
-
-        return this.http.post('http://localhost:8080/menuitems', body, options)
+        return this.http.post(this.host + '/menuitems', body, options)
             .map(this.extractData)
     }
 
@@ -31,7 +32,7 @@ export class MenuItemService {
         let headers = new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({headers: headers});
 
-        return this.http.get('http://localhost:8080/menuitems', options)
+        return this.http.get(this.host + '/v2' + '/menuitems', options)
             .map((response: Response) => <MenuItem[]> response.json())
     }
 
@@ -39,7 +40,7 @@ export class MenuItemService {
         let headers = new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({headers: headers});
 
-        return this.http.get('http://localhost:8080/menuitems/' + id, options)
+        return this.http.get(this.host + '/v2' + '/menuitems/' + id, options)
             .map(this.extractData)
 
     }
