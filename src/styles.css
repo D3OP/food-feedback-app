@@ -4,7 +4,7 @@ html {
 }
 
 body {
-    background-image: url("/src/app/resources/background.png");
+    background-image: url("./assets/background.png");
     background-size: cover;
     background-repeat: no-repeat;
 }

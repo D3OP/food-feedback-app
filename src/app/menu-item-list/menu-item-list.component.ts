@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { MenuItem } from '../models/menu-item.model';
 import { MenuItemService } from '../services/menu-item.service';
 
@@ -7,13 +7,14 @@ import { MenuItemService } from '../services/menu-item.service';
 })
 
 export class MenuItemListComponent implements OnInit {
-
     menuItemList : MenuItem[];
     errorMessage : string;
 
     constructor(private menuItemService: MenuItemService) {
 
     }
+
+
 
     ngOnInit() {
         this.readMenuItems()

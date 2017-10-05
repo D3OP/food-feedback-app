@@ -49,7 +49,7 @@ describe('In the file menu-item-list.component.ts', () => {
                 //then
                 expect(viewMenuItemComponent.menuItem).to.eql(mockMenuItem.object);
 
-            })
+            });
 
             it('will return an error when the requested menu item is not present', () => {
                 //given
