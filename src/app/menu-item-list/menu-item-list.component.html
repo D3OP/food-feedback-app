@@ -6,6 +6,7 @@
                     <th>Name</th>
                     <th>Description</th>
                     <th>Restaurant</th>
+                    <th>Rating</th>
                 </tr>
             </thead>
             <tbody>
@@ -13,9 +14,13 @@
                     <td><a [routerLink]="['/details', menuItem.id]">{{ menuItem.name }}</a></td>
                     <td>{{ menuItem.description }}</td>
                     <td>{{ menuItem.restaurantName }}</td>
+                    <td>
+                        <rating [(ngModel)]="currentRate"></rating>
+                    </td>
                 </tr>
             </tbody>
         </table>
+
     </div>
 </div>
 

@@ -3,12 +3,13 @@ import { MenuItem } from '../models/menu-item.model';
 import { MenuItemService } from '../services/menu-item.service';
 
 @Component({
-    templateUrl: './menu-item-list.component.html'
+    templateUrl: './menu-item-list.component.html',
 })
 
 export class MenuItemListComponent implements OnInit {
     menuItemList : MenuItem[];
     errorMessage : string;
+    currentRate = 3;
 
     constructor(private menuItemService: MenuItemService) {
 
