@@ -4,5 +4,6 @@ export class MenuItem {
     public name: string;
     public restaurantName: string;
     public description: string;
+    public rating: number;
 
 }

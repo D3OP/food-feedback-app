@@ -25,6 +25,9 @@
                        id="description"
                        [(ngModel)]="menuItem.description"
                        placeholder="Best sandwich I've ever had, except for the onions..." required>
+                <label>Rating?</label>
+                <rating name="rating"
+                        [(ngModel)]="menuItem.rating"></rating>
                 </div>
         </div>
         <button class="w3-btn w3-margin"

@@ -24,7 +24,7 @@ export class MenuItemService {
 
 
         return this.http.post('http://localhost:8080/menuitems', body, options)
-            .map(this.extractData)
+            .map(this.extractData).delay(100);
     }
 
     readMenuItems(): Observable<MenuItem[]> {

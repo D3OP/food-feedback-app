@@ -13,6 +13,11 @@
                 <td>Restaurant:</td>
                 <td id="restaurant-name">{{ menuItem.restaurantName }}</td>
             </tr>
+                <td>Rating</td>
+                <td>
+                    <rating [(ngModel)]="menuItem.rating"
+                            [readonly]="true"></rating>
+                </td>
         </table>
     </div>
 </div>

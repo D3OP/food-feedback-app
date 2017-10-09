@@ -15,7 +15,7 @@
                     <td>{{ menuItem.description }}</td>
                     <td>{{ menuItem.restaurantName }}</td>
                     <td>
-                        <rating [(ngModel)]="currentRate"
+                        <rating [(ngModel)]="menuItem.rating"
                                 [readonly]="true"></rating>
                     </td>
                 </tr>
