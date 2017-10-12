@@ -10,7 +10,7 @@ export class FeatureToggleService {
     }
 
     getFeatures() : Observable<Map<string, string>> {
-        return this.http.get('src/app/menu-item-list/features.json')
+        return this.http.get('../assets/features.json')
             .map((response: Response) => <Map<string, string>> response.json());
    }
 

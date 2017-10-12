@@ -9,15 +9,17 @@ import {FeatureToggleService} from "../services/feature-toggle-service";
 
 export class MenuItemListComponent implements OnInit {
     menuItemList : MenuItem[];
-    errorMessage : string;
+    menuErrorMessage : string;
+    features: Map<string, string>;
+    featureErrorMessage: string;
 
-    constructor(private menuItemService: MenuItemService, featureToggleService: FeatureToggleService) {
+
+    constructor(private menuItemService: MenuItemService, private featureToggleService: FeatureToggleService) {
 
     }
 
-
-
     ngOnInit() {
+        this.readFeatures()
         this.readMenuItems()
     }
 
@@ -25,8 +27,15 @@ export class MenuItemListComponent implements OnInit {
        this.menuItemService.readMenuItems()
             .subscribe(
                 menuItems => this.menuItemList = menuItems,
-                error =>  this.errorMessage = <any>error
+                menuError =>  this.menuErrorMessage = <any>menuError
             )
+    }
+
+    readFeatures() {
+        this.featureToggleService.getFeatures().subscribe(
+            features => this.features = features,
+            featureError => this.featureErrorMessage = <any>featureError
+        );
     }
 
 }
