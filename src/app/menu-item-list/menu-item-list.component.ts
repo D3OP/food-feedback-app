@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { MenuItem } from '../models/menu-item.model';
 import { MenuItemService } from '../services/menu-item.service';
+import {FeatureToggleService} from "../services/feature-toggle-service";
 
 @Component({
     templateUrl: './menu-item-list.component.html',
@@ -9,9 +10,8 @@ import { MenuItemService } from '../services/menu-item.service';
 export class MenuItemListComponent implements OnInit {
     menuItemList : MenuItem[];
     errorMessage : string;
-    currentRate = 3;
 
-    constructor(private menuItemService: MenuItemService) {
+    constructor(private menuItemService: MenuItemService, featureToggleService: FeatureToggleService) {
 
     }
 
