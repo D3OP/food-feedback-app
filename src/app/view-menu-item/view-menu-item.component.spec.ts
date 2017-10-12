@@ -39,7 +39,7 @@ describe('In the file menu-item-list.component.ts', () => {
                 mockMenuItem.object.id = "1";
 
                 mockMenuItemService
-                    .setup(x => x.readMenuItem(TypeMoq.It.isObjectWith()))
+                    .setup(x => x.readMenuItem(TypeMoq.It.isAny()))
                     .returns(() => Observable.of(mockMenuItem.object));
 
                 //when
@@ -57,7 +57,7 @@ describe('In the file menu-item-list.component.ts', () => {
                 const id:string = "blah";
 
                 mockMenuItemService
-                    .setup(x => x.readMenuItem(TypeMoq.It.isObjectWith()))
+                    .setup(x => x.readMenuItem(TypeMoq.It.isAny()))
                     .returns(() => Observable.throw(error));
 
                 //when
