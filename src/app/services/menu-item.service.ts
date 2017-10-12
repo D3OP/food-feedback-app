@@ -12,11 +12,6 @@ export class MenuItemService {
 
     }
 
-    private extractData(response: Response) {
-        let body = response.json();
-        return body;
-    }
-
     postMenuItem(menuItem: MenuItem): Observable<MenuItem> {
         let body = JSON.stringify(menuItem);
         let headers = new Headers({'Content-Type': 'application/json'});
@@ -24,7 +19,7 @@ export class MenuItemService {
 
 
         return this.http.post('http://localhost:8080/menuitems', body, options)
-            .map(this.extractData).delay(100);
+            .map((response: Response) => response.json());
     }
 
     readMenuItems(): Observable<MenuItem[]> {
@@ -40,7 +35,7 @@ export class MenuItemService {
         let options = new RequestOptions({headers: headers});
 
         return this.http.get('http://localhost:8080/menuitems/' + id, options)
-            .map(this.extractData)
+            .map((response: Response) => response.json())
 
     }
 
