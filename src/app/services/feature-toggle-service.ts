@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {Http} from "@angular/http";
+import {Http, Response} from "@angular/http";
 import {Observable} from "rxjs/Observable";
 
 @Injectable()
@@ -9,11 +9,9 @@ export class FeatureToggleService {
 
     }
 
-    getFeatures() : Observable<any> {
-        return this.http.request('src/app/menu-item-list/features.json')
-            .map(response => {
-                response.json().features;
-            });
-    }
+    getFeatures() : Observable<Map<string, string>> {
+        return this.http.get('src/app/menu-item-list/features.json')
+            .map((response: Response) => <Map<string, string>> response.json());
+   }
 
 }
