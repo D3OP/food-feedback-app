@@ -12,7 +12,6 @@ import { ViewMenuItemComponent } from "./view-menu-item/view-menu-item.component
 
 import {routing} from "./app.routing";
 import {RatingModule} from "ng2-rating";
-import {FeatureToggleService} from "./services/feature-toggle-service";
 
 @NgModule({
   declarations: [
@@ -29,8 +28,7 @@ import {FeatureToggleService} from "./services/feature-toggle-service";
       RatingModule
   ],
   providers: [
-      MenuItemService,
-      FeatureToggleService
+      MenuItemService
   ],
   bootstrap: [AppComponent]
 })

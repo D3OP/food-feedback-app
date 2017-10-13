@@ -6,7 +6,7 @@
                     <th>Name</th>
                     <th>Description</th>
                     <th>Restaurant</th>
-                    <div *ngIf="features?.ratings == 'true'">
+                    <div *ngIf="features?.ratings == true">
                         <th>Rating</th>
                     </div>
                 </tr>
@@ -16,7 +16,7 @@
                     <td><a [routerLink]="['/details', menuItem.id]">{{ menuItem.name }}</a></td>
                     <td>{{ menuItem.description }}</td>
                     <td>{{ menuItem.restaurantName }}</td>
-                    <div *ngIf="features?.ratings == 'true'">
+                    <div *ngIf="features?.ratings == true">
                         <td>
                             <rating [(ngModel)]="menuItem.rating"
                                     [readonly]="true"></rating>

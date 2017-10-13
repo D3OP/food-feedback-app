@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { MenuItem } from '../models/menu-item.model';
 import { MenuItemService } from '../services/menu-item.service';
-import {FeatureToggleService} from "../services/feature-toggle-service";
+import { features } from '../../assets/features';
 
 @Component({
     templateUrl: './menu-item-list.component.html',
@@ -9,33 +9,24 @@ import {FeatureToggleService} from "../services/feature-toggle-service";
 
 export class MenuItemListComponent implements OnInit {
     menuItemList : MenuItem[];
-    menuErrorMessage : string;
-    features: Map<string, string>;
-    featureErrorMessage: string;
+    errorMessage : string;
+    features: any;
 
-
-    constructor(private menuItemService: MenuItemService, private featureToggleService: FeatureToggleService) {
+    constructor(private menuItemService: MenuItemService) {
 
     }
 
     ngOnInit() {
-        this.readFeatures()
         this.readMenuItems()
+        this.features = features;
     }
 
     readMenuItems() {
        this.menuItemService.readMenuItems()
             .subscribe(
                 menuItems => this.menuItemList = menuItems,
-                menuError =>  this.menuErrorMessage = <any>menuError
+                menuError =>  this.errorMessage = <any>menuError
             )
-    }
-
-    readFeatures() {
-        this.featureToggleService.getFeatures().subscribe(
-            features => this.features = features,
-            featureError => this.featureErrorMessage = <any>featureError
-        );
     }
 
 }
