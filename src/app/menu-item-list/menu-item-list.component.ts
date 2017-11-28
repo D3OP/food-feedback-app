@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { MenuItem } from '../models/menu-item.model';
 import { MenuItemService } from '../services/menu-item.service';
-import { features } from '../../assets/features';
+import { features } from '../features';
 
 @Component({
     templateUrl: './menu-item-list.component.html',
@@ -13,12 +13,11 @@ export class MenuItemListComponent implements OnInit {
     features: any;
 
     constructor(private menuItemService: MenuItemService) {
-
+        this.features = features;
     }
 
     ngOnInit() {
-        this.readMenuItems()
-        this.features = features;
+        this.readMenuItems();
     }
 
     readMenuItems() {
@@ -30,3 +29,6 @@ export class MenuItemListComponent implements OnInit {
     }
 
 }
+
+
+

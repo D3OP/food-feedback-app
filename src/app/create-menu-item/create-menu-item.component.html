@@ -25,7 +25,7 @@
                        id="description"
                        [(ngModel)]="menuItem.description"
                        placeholder="Best sandwich I've ever had, except for the onions..." required>
-                <div *ngIf="features?.ratings == 'true'">
+                <div *ngIf="features?.rating == true">
                     <label>Rating?</label>
                     <rating name="rating"
                             [(ngModel)]="menuItem.rating"></rating>
@@ -36,3 +36,5 @@
                 type="submit"
                 id="save-btn">Save</button>
     </form>
+
+

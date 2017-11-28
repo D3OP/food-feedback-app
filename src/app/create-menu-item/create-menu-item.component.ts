@@ -3,6 +3,7 @@ import { MenuItem } from '../models/menu-item.model';
 import { MenuItemService } from '../services/menu-item.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { features } from '../features';
 
 
 @Component({
@@ -11,9 +12,10 @@ import { Router } from '@angular/router';
 
 export class CreateMenuItemComponent {
     menuItem = new MenuItem();
+    features: any;
 
     constructor(private router:Router, private menuItemService: MenuItemService) {
-
+        this.features = features;
     }
 
     submitForm(form: NgForm) {
@@ -25,3 +27,4 @@ export class CreateMenuItemComponent {
         this.router.navigate(['/view-list']);
     }
 }
+

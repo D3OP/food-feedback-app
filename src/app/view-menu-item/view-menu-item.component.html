@@ -14,7 +14,7 @@
                 <td>Restaurant:</td>
                 <td id="restaurant-name">{{ menuItem.restaurantName }}</td>
             </tr>
-            <div *ngIf="features?.ratings == 'true'">
+            <div *ngIf="features?.rating == true">
                 <tr>
                     <td>Rating</td>
                     <td>
@@ -26,4 +26,8 @@
         </table>
     </div>
 </div>
-<button id="view-all-items-btn" class="w3-btn w3-margin" [routerLink]="['/view-list']">View All Menu Items</button>
+<button id="view-all-items-btn"
+        class="w3-btn w3-margin"
+        [routerLink]="['/view-list']">View All Menu Items</button>
+
+

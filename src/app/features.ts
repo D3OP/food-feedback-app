@@ -1,3 +1,5 @@
 export const features = {
-    ratings: true
+    rating: false
 };
+
+
