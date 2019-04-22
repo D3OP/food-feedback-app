@@ -21,10 +21,11 @@ export class CreateMenuItemComponent {
     submitForm(form: NgForm) {
         this.menuItemService.postMenuItem(this.menuItem)
             .subscribe(
-                data => console.log('Success. Received response:  ', data),
-                err => console.log('error: ', err)
+                data => {console.log('Success. Received response:  ', data),
+                this.router.navigate(['/view-list'])},
+                err => {console.log('error: ', err),
+                this.router.navigate(['/view-list'])}
             )
-        this.router.navigate(['/view-list']);
     }
 }
 
