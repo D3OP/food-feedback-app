@@ -18,7 +18,7 @@ export class MenuItemService {
         let options = new RequestOptions({headers: headers});
 
 
-        return this.http.post('http://localhost:8080/menuitems', body, options)
+        return this.http.post('http://localhost:8080/menuitemservice/menuitems', body, options)
             .map((response: Response) => response.json());
     }
 
@@ -26,7 +26,7 @@ export class MenuItemService {
         let headers = new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({headers: headers});
 
-        return this.http.get('http://localhost:8080/menuitems', options)
+        return this.http.get('http://localhost:8080/menuitemservice/menuitems', options)
             .map((response: Response) => <MenuItem[]> response.json())
     }
 
@@ -34,7 +34,7 @@ export class MenuItemService {
         let headers = new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({headers: headers});
 
-        return this.http.get('http://localhost:8080/menuitems/' + id, options)
+        return this.http.get('http://localhost:8080/menuitemservice/menuitems/' + id, options)
             .map((response: Response) => response.json())
 
     }
