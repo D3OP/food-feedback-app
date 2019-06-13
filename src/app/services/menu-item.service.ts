@@ -3,11 +3,11 @@ import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { MenuItem } from '../models/menu-item.model';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
-
+import { Constants } from '../utility/constants';
 
 @Injectable()
 export class MenuItemService {
-
+    private baseUrl:string=Constants.BASE_URL;
     constructor(private http: Http) {
 
     }
@@ -18,7 +18,7 @@ export class MenuItemService {
         let options = new RequestOptions({headers: headers});
 
 
-        return this.http.post('http://localhost:8080/menuitems', body, options)
+        return this.http.post(this.baseUrl, body, options)
             .map((response: Response) => response.json());
     }
 
@@ -26,7 +26,7 @@ export class MenuItemService {
         let headers = new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({headers: headers});
 
-        return this.http.get('http://localhost:8080/menuitems', options)
+        return this.http.get(this.baseUrl, options)
             .map((response: Response) => <MenuItem[]> response.json())
     }
 
@@ -34,7 +34,7 @@ export class MenuItemService {
         let headers = new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({headers: headers});
 
-        return this.http.get('http://localhost:8080/menuitems/' + id, options)
+        return this.http.get(this.baseUrl +"/"+ id, options)
             .map((response: Response) => response.json())
 
     }
