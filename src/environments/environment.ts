@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  baseURL: "http://localhost:8080/menuitems"
+  baseURL: "http://192.168.7.152:8080/menuitems"
 };
